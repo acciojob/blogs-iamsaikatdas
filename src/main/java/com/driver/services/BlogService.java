@@ -24,26 +24,21 @@ public class BlogService {
 
     public Blog createAndReturnBlog(Integer userId, String title, String content) {
         //create a blog at the current time
-        SimpleDateFormat formatter = new SimpleDateFormat("dd/MM/yyyy HH:mm:ss");
-        Date date = new Date();
-        Blog blog = new Blog();
-        blog.setPubDate(date);
-
-        //updating the blog details
         User user = userRepository.findById(userId).get();
+        Blog blog = new Blog();
+
+        blog.setPubDate(new Date());
         blog.setUser(user);
         blog.setTitle(title);
         blog.setContent(content);
 
         userRepository.save(user);
-        blogRepository.save(blog);
-        //Updating the userInformation and changing its blogs
+        user.getBlogList().add(blog);
         return blog;
     }
 
-    public void deleteBlog(int blogId){
+    public void deleteBlog(int blogId) {
         //delete blog and corresponding images
-        if (blogRepository.findById(blogId).get() == null) return;;
         blogRepository.deleteById(blogId);
     }
 }
