@@ -18,15 +18,17 @@ public class Image {
     @JoinColumn
     private Blog blog;
 
+    public Image(Blog blog, String description, String dimensions) {
+        this.id = id;
+        this.description = description;
+        this.dimensions = dimensions;
+        this.blog = blog;
+    }
+
     public Blog getBlog() {
         return blog;
     }
 
-    public Image(int id, String description, String dimensions) {
-        this.id = id;
-        this.description = description;
-        this.dimensions = dimensions;
-    }
 
     public void setBlog(Blog blog) {
         this.blog = blog;
