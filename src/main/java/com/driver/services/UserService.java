@@ -15,8 +15,8 @@ public class UserService {
 
     public User createUser(String username, String password){
         User user = new User();
-        user.setUserName(username);
-        user.setPassWord(password);
+        user.setUsername(username);
+        user.setPassword(password);
         userRepository.save(user);
         return user;
     }
@@ -27,7 +27,7 @@ public class UserService {
 
     public User updateUser(Integer id, String password){
         User user = userRepository.findById(id).get();
-        user.setPassWord(password);
+        user.setPassword(password);
         userRepository.save(user);
         return user;
     }
