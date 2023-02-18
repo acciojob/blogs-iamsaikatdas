@@ -11,18 +11,24 @@ import java.util.List;
 @Service
 public class UserService {
     @Autowired
-    UserRepository userRepository3;
+    UserRepository userRepository;
 
     public User createUser(String username, String password){
-
-
+        User user = new User();
+        user.setUserName(username);
+        user.setPassWord(password);
+        userRepository.save(user);
+        return user;
     }
 
     public void deleteUser(int userId){
-
+        userRepository.deleteById(userId);
     }
 
     public User updateUser(Integer id, String password){
-
+        User user = userRepository.findById(id).get();
+        user.setPassWord(password);
+        userRepository.save(user);
+        return user;
     }
 }
