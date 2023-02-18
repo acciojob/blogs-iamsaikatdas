@@ -25,14 +25,9 @@ public class BlogService {
     public Blog createAndReturnBlog(Integer userId, String title, String content) {
         //create a blog at the current time
         User user = userRepository.findById(userId).get();
-        Blog blog = new Blog();
-
+        Blog blog = new Blog(user,title,content);
         blog.setPubDate(new Date());
-        blog.setUser(user);
-        blog.setTitle(title);
-        blog.setContent(content);
-
-        userRepository.save(user);
+        userRepository.save(user); //Blog saved in repo by cascading
         user.getBlogList().add(blog);
         return blog;
     }

@@ -38,11 +38,9 @@ public class ImageService {
         //Find the number of images of given dimensions that can fit in a screen having `screenDimensions`
         String[] scrArray = screenDimensions.split("X"); //A=Length   X    B=Br
         Image image = imageRepository2.findById(id).get();
-        System.out.println(image + " image dimension 1");
 
         String imageDimensions = image.getDimensions();
         String[] imgArray = imageDimensions.split("X");
-        System.out.println(imageDimensions + " image dimension 2");
 
         int scrl = Integer.parseInt(scrArray[0]); //A -- > integer
         int scrb = Integer.parseInt(scrArray[1]); //B -- > integer

@@ -31,6 +31,13 @@ public class Blog {
     @OneToMany(mappedBy = "blog", cascade = CascadeType.ALL)
     private List<Image> imageList = new ArrayList<>();
 
+     public Blog(User user, String title, String content) {
+        this.id = id;
+        this.title = title;
+        this.content = content;
+        this.user = user;
+    }
+
     public User getUser() {
         return user;
     }
