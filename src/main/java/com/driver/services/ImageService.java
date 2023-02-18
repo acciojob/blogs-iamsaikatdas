@@ -22,7 +22,7 @@ public class ImageService {
         Image image = new Image();
         image.setBlog(blog);
         image.setDescription(description);
-        image.setDimension(dimensions);
+        image.setDimensions(dimensions);
 
         blogRepository2.save(blog);
         imageRepository2.save(image);
@@ -40,7 +40,7 @@ public class ImageService {
         Image image = imageRepository2.findById(id).get();
         System.out.println(image + " image dimension 1");
 
-        String imageDimensions = image.getDimension();
+        String imageDimensions = image.getDimensions();
         String[] imgArray = imageDimensions.split("X");
         System.out.println(imageDimensions + " image dimension 2");
 
