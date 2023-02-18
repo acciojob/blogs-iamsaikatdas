@@ -25,6 +25,7 @@ public class ImageService {
         image.setDimension(dimensions);
 
         blogRepository2.save(blog);
+        imageRepository2.save(image);
         return image;
 
     }
@@ -35,7 +36,8 @@ public class ImageService {
 
     public int countImagesInScreen(Integer id, String screenDimensions) {
         //Find the number of images of given dimensions that can fit in a screen having `screenDimensions`
-        List<Image> image = imageRepository2.findAll();
+        List<Image> image = imageRepository2.getAllImage();
+
         Image image1= new Image();
         int count =0;
         for (Image c: image){
