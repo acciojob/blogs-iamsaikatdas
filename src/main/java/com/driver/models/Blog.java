@@ -47,6 +47,15 @@ public class Blog {
         this.imageList = imageList;
     }
 
+    public Blog(int id, String title, String content, Date publicationDate, User user, List<Image> imageList) {
+        this.id = id;
+        this.title = title;
+        this.content = content;
+        this.publicationDate = publicationDate;
+        this.user = user;
+        this.imageList = imageList;
+    }
+
     public Blog() {
     }
 
@@ -55,6 +64,10 @@ public class Blog {
     }
 
     public void setId(int id) {
+        this.id = id;
+    }
+
+    public Blog(int id) {
         this.id = id;
     }
 

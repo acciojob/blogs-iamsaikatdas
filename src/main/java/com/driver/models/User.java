@@ -31,6 +31,15 @@ public class User {
         this.blogList = blogList;
     }
 
+    public User(int id, String userName, String passWord, String firstName, String lastName, List<Blog> blogList) {
+        this.id = id;
+        this.userName = userName;
+        this.passWord = passWord;
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.blogList = blogList;
+    }
+
     public User() {
     }
 
