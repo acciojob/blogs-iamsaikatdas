@@ -19,7 +19,7 @@ public class Blog {
     private String content;
 
     // @CreationTimestamp
-    private Date publicationDate;
+    private Date pubDate;
 
 
     //  child of the user table;
@@ -46,17 +46,6 @@ public class Blog {
     public void setImageList(List<Image> imageList) {
         this.imageList = imageList;
     }
-
-    public Blog(int id, String title, String content, Date publicationDate, User user, List<Image> imageList) {
-        this.id = id;
-        this.title = title;
-        this.content = content;
-        this.publicationDate = publicationDate;
-        this.user = user;
-        this.imageList = imageList;
-    }
-
-
 
     public Blog() {
     }
@@ -89,11 +78,11 @@ public class Blog {
         this.content = content;
     }
 
-    public Date getPublicationDate() {
-        return publicationDate;
+    public Date getPubDate() {
+        return pubDate;
     }
 
-    public void setPublicationDate(Date publicationDate) {
-        this.publicationDate = publicationDate;
+    public void setPubDate(Date pubDate) {
+        this.pubDate = pubDate;
     }
 }

@@ -27,7 +27,7 @@ public class BlogService {
         SimpleDateFormat formatter = new SimpleDateFormat("dd/MM/yyyy HH:mm:ss");
         Date date = new Date();
         Blog blog = new Blog();
-        blog.setPublicationDate(date);
+        blog.setPubDate(date);
 
         //updating the blog details
         User user = userRepository.findById(userId).get();
