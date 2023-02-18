@@ -56,6 +56,8 @@ public class Blog {
         this.imageList = imageList;
     }
 
+
+
     public Blog() {
     }
 

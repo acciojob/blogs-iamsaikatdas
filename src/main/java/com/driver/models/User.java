@@ -40,6 +40,7 @@ public class User {
         this.blogList = blogList;
     }
 
+
     public User() {
     }
 

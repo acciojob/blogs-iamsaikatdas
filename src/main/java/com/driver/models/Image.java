@@ -33,6 +33,7 @@ public class Image {
         this.blog = blog;
     }
 
+
     public Image() {}
 
     public void setDescription(String description) {
